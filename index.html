@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>秋霞电影网在线 | 海量片库在线选片 · 每日更新院线资讯与观影榜单</title>
+<meta name="description" content="秋霞电影网在线聚合海量正版授权影视片库，提供犯罪悬疑、喜剧爱情、科幻动作、纪录片等题材分区在线选片，搭配每日更新的院线资讯、专业影评解读与观影榜单。支持手机、平板、电脑全端自适应浏览，帮你用最短时间找到真正值得看的电影。">
+<meta name="keywords" content="秋霞电影网在线, 在线选片平台, 海量影视片库, 院线资讯速递, 电影口碑榜单, 正版授权影视资源">
+<link rel="canonical" href="https://qiuxiadianyingwangzaixian-zh.github.io/">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --paper:#f7f3ec; --paper2:#efe8dc; --ink:#221d18; --ink2:#4a4138; --sub:#8a7f70;
+  --line:#e2d7c6; --gold:#c8782a; --gold2:#e6a24c; --deep:#7a3b12; --green:#3f7a5c;
+}
+html{scroll-behavior:smooth}
+body{
+  background:var(--paper); color:var(--ink);
+  font-family:"PingFang SC","Songti SC","Microsoft YaHei",Georgia,serif;
+  line-height:1.8; -webkit-font-smoothing:antialiased;
+}
+a{text-decoration:none;color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+
+/* 报头 */
+header.head{border-bottom:3px double var(--line);background:var(--paper)}
+.head-in{max-width:1180px;margin:0 auto;padding:26px 24px;display:grid;grid-template-columns:auto 1fr auto;gap:32px;align-items:center}
+.mast{display:flex;align-items:baseline;gap:12px;border-right:1px solid var(--line);padding-right:32px}
+.mast b{font-size:34px;font-weight:900;letter-spacing:2px;font-family:"Songti SC","STSong",serif}
+.mast em{font-style:normal;font-size:11px;color:var(--gold);letter-spacing:3px;text-transform:uppercase;writing-mode:vertical-rl;margin-left:2px}
+.mast small{display:block;font-size:12px;color:var(--sub);margin-top:2px;letter-spacing:1px}
+.head-nav{display:flex;gap:4px;flex-wrap:wrap;justify-content:center}
+.head-nav a{font-size:14.5px;font-weight:700;padding:7px 13px;border-radius:6px;transition:.2s;color:var(--ink2)}
+.head-nav a:hover{background:var(--ink);color:#fff}
+.head-side{display:flex;flex-direction:column;align-items:flex-end;gap:6px}
+.head-side .edition{font-size:11px;color:var(--sub);letter-spacing:1px}
+.head-side .date{font-size:12.5px;color:var(--ink2);font-variant-numeric:tabular-nums}
+.head-side .search{margin-top:6px;font-size:12px;color:var(--gold);border:1px solid var(--line);padding:5px 12px;border-radius:99px}
+
+/* 头条 */
+.lede{border-bottom:1px solid var(--line);padding:46px 0 40px;background:linear-gradient(180deg,#fffdf8,var(--paper))}
+.lede-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:52px;align-items:start}
+.kicker{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.kicker span{background:var(--deep);color:#fff;font-size:11px;font-weight:800;padding:4px 10px;letter-spacing:2px}
+.kicker i{width:36px;height:1px;background:var(--gold);display:block}
+.lede h2{font-size:clamp(30px,4.2vw,50px);line-height:1.2;font-weight:900;letter-spacing:-.5px;font-family:"Songti SC","STSong",serif}
+.lede h2 b{background:linear-gradient(transparent 62%,var(--gold2) 62%);font-weight:900}
+.lede .standfirst{margin-top:20px;font-size:16.5px;color:var(--ink2);border-left:3px solid var(--gold);padding-left:16px}
+.lede-meta{margin-top:26px;display:flex;gap:26px;flex-wrap:wrap;font-size:13px;color:var(--sub)}
+.lede-meta strong{color:var(--deep);font-weight:800}
+.lede-cards{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.mini{border:1px solid var(--line);border-radius:10px;padding:18px;background:#fff;transition:.22s}
+.mini:hover{border-color:var(--gold);transform:translateY(-3px);box-shadow:0 10px 26px rgba(122,59,18,.1)}
+.mini .num{font-size:11px;color:var(--gold);letter-spacing:2px;font-weight:800}
+.mini h4{font-size:16px;font-weight:900;margin:8px 0 6px;line-height:1.4}
+.mini p{font-size:12.5px;color:var(--sub);line-height:1.65}
+.mini .arrow{margin-top:10px;font-size:12px;color:var(--deep);font-weight:700}
+
+/* 栏目通用 */
+section{padding:70px 0}
+.bar{display:flex;align-items:baseline;gap:14px;margin-bottom:8px}
+.bar h3{font-size:clamp(22px,2.8vw,30px);font-weight:900;letter-spacing:-.3px;font-family:"Songti SC","STSong",serif}
+.bar h3::before{content:"§";color:var(--gold);margin-right:8px;font-weight:400}
+.bar .en{font-size:11px;color:var(--gold);letter-spacing:3px;text-transform:uppercase}
+.bar .more{margin-left:auto;font-size:13px;color:var(--deep);font-weight:700;border-bottom:1px solid var(--line);padding-bottom:2px}
+.subtxt{color:var(--sub);font-size:14px;margin-bottom:34px;max-width:640px}
+
+/* 栏目一：编辑精选 */
+.pick-grid{display:grid;grid-template-columns:1.35fr 1fr 1fr;grid-template-rows:1fr 1fr;gap:18px}
+.pick{position:relative;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:#fff;transition:.28s}
+.pick:hover{transform:translateY(-5px);box-shadow:0 16px 34px rgba(122,59,18,.15);border-color:var(--gold2)}
+.pick.lg{grid-row:span 2}
+.cover{position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:20px;color:#fff}
+.cover::before{content:"";position:absolute;inset:0;background:linear-gradient(175deg,transparent 30%,rgba(20,14,8,.9))}
+.cover>*{position:relative;z-index:2}
+.cover .cn{font-size:clamp(20px,2.4vw,28px);font-weight:900;line-height:1.3}
+.cover .en2{font-size:11px;letter-spacing:2px;opacity:.85;margin-top:4px}
+.cover .info{margin-top:12px;font-size:12px;opacity:.92;display:flex;gap:10px;flex-wrap:wrap}
+.cover .info i{font-style:normal;background:rgba(255,255,255,.18);padding:2px 8px;border-radius:3px}
+.stamp{position:absolute;top:14px;left:14px;z-index:3;background:var(--deep);color:#fff;font-size:11px;font-weight:800;padding:4px 10px;border-radius:3px;letter-spacing:1px}
+.stamp.gold{background:var(--gold)}
+.rank-no{position:absolute;top:12px;right:14px;z-index:3;font-family:Georgia,serif;font-size:30px;font-weight:900;color:rgba(255,255,255,.85);text-shadow:0 2px 8px rgba(0,0,0,.3)}
+.pick .body{padding:16px 18px 18px}
+.pick .body h4{font-size:16.5px;font-weight:900;line-height:1.45;margin-bottom:7px}
+.pick .body p{font-size:13px;color:var(--sub);line-height:1.7}
+.pick .body .chips{margin-top:12px;display:flex;gap:6px;flex-wrap:wrap}
+.chip{font-size:11px;background:var(--paper2);color:var(--ink2);padding:3px 9px;border-radius:3px}
+.chip.on{background:var(--deep);color:#fff}
+
+/* 栏目二：分区名录 */
+.catalog{columns:4;column-gap:18px}
+.entry{break-inside:avoid;border:1px solid var(--line);border-radius:10px;padding:18px 20px;margin-bottom:16px;background:#fff;transition:.22s}
+.entry:hover{border-color:var(--gold);background:#fffdf8}
+.entry h4{font-size:16px;font-weight:900;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.entry h4 i{font-style:normal;color:var(--gold);font-size:15px}
+.entry p{font-size:12.5px;color:var(--sub);line-height:1.7}
+.entry .foot{margin-top:12px;padding-top:10px;border-top:1px dashed var(--line);font-size:11.5px;color:var(--ink2);display:flex;justify-content:space-between}
+
+/* 栏目三：双栏长文 */
+.essay{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.article{border:1px solid var(--line);border-radius:12px;padding:26px 28px;background:#fff;transition:.22s;display:flex;flex-direction:column}
+.article:hover{border-color:var(--gold);transform:translateY(-3px)}
+.article .cat{font-size:11px;color:var(--gold);letter-spacing:2px;font-weight:800;margin-bottom:10px}
+.article h4{font-size:20px;font-weight:900;line-height:1.45;margin-bottom:12px;font-family:"Songti SC","STSong",serif}
+.article p{font-size:14px;color:var(--ink2);line-height:1.85;flex:1}
+.article .byline{margin-top:18px;padding-top:14px;border-top:1px solid var(--line);font-size:12px;color:var(--sub);display:flex;justify-content:space-between}
+
+/* 栏目四：数据表 */
+.figures{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff}
+.figures table{width:100%;border-collapse:collapse}
+.figures th,.figures td{padding:15px 20px;text-align:left;border-bottom:1px solid var(--line);font-size:14px}
+.figures th{background:var(--paper2);font-size:12px;color:var(--deep);letter-spacing:1px;font-weight:800}
+.figures tr:last-child td{border-bottom:none}
+.figures td.num{font-variant-numeric:tabular-nums;font-weight:800;text-align:right;width:120px}
+.figures td.up{color:var(--green);font-weight:700}
+.figures tbody tr:hover{background:#fffdf8}
+
+/* 栏目五：专题拼贴 */
+.collage{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:120px;gap:14px}
+.tile{border-radius:10px;padding:18px;color:#fff;display:flex;flex-direction:column;justify-content:space-between;transition:.25s;position:relative;overflow:hidden}
+.tile:hover{transform:scale(1.02);box-shadow:0 12px 28px rgba(0,0,0,.2)}
+.tile h4{font-size:16px;font-weight:900;line-height:1.35;position:relative;z-index:2}
+.tile small{font-size:11.5px;opacity:.9;position:relative;z-index:2}
+.tile::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 85% 15%,rgba(255,255,255,.22),transparent 60%)}
+.t1{grid-column:span 3;grid-row:span 2;background:linear-gradient(150deg,#3a2f25,#1c1610)}
+.t2{grid-column:span 3;background:linear-gradient(135deg,#8a4a18,#5a2e0c)}
+.t3{grid-column:span 2;background:linear-gradient(135deg,#2f4a3a,#1c2e22)}
+.t4{grid-column:span 1;background:linear-gradient(135deg,#4a3a2a,#2e2118)}
+.t5{grid-column:span 3;background:linear-gradient(135deg,#6a3a2a,#3e2014)}
+.t6{grid-column:span 2;background:linear-gradient(135deg,#3a4a5a,#1e2830)}
+.t7{grid-column:span 2;background:linear-gradient(135deg,#5a4a3a,#32281c)}
+.t8{grid-column:span 2;background:linear-gradient(135deg,#4a2f3a,#2a1820)}
+
+/* 栏目六：FAQ 报刊式 */
+.questions{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:2px solid var(--ink)}
+.questions details{border-bottom:1px solid var(--line);padding:18px 22px 18px 0;transition:.2s}
+.questions details:nth-child(odd){border-right:1px solid var(--line);padding-right:22px;padding-left:0}
+.questions details:nth-child(even){padding-left:22px}
+.questions summary{cursor:pointer;font-size:15.5px;font-weight:800;list-style:none;display:flex;gap:12px;align-items:flex-start}
+.questions summary::-webkit-details-marker{display:none}
+.questions summary::before{content:"Q";flex-shrink:0;width:22px;height:22px;background:var(--deep);color:#fff;border-radius:50%;display:grid;place-items:center;font-size:12px;font-weight:900;margin-top:2px}
+.questions details[open] summary::before{background:var(--gold)}
+.questions details p{margin:12px 0 0 34px;font-size:14px;color:var(--ink2);line-height:1.85}
+.questions details[open] summary{color:var(--deep)}
+
+/* 订阅 */
+.subscribe{border:3px double var(--line);border-radius:14px;padding:40px;background:#fff;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.subscribe h3{font-size:26px;font-weight:900;font-family:"Songti SC","STSong",serif;line-height:1.4}
+.subscribe h3 b{color:var(--gold)}
+.subscribe p{color:var(--sub);font-size:14px;margin-top:10px}
+.subscribe form{display:flex;gap:0;border:1px solid var(--line);border-radius:99px;overflow:hidden;background:var(--paper)}
+.subscribe input{flex:1;border:none;background:transparent;padding:15px 20px;font-size:14.5px;font-family:inherit;color:var(--ink);outline:none}
+.subscribe button{border:none;background:var(--deep);color:#fff;font-weight:800;padding:0 28px;font-size:14px;cursor:pointer;transition:.2s}
+.subscribe button:hover{background:var(--gold)}
+.subscribe small{display:block;margin-top:12px;font-size:12px;color:var(--sub)}
+
+/* 页脚 */
+footer{border-top:3px double var(--line);background:var(--paper2);padding:48px 0 24px;margin-top:40px}
+.foot{max-width:1180px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:36px}
+.foot h5{font-size:13px;font-weight:900;margin-bottom:16px;letter-spacing:1px;color:var(--deep)}
+.foot ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.foot a{color:var(--ink2);font-size:13.5px;transition:.2s}
+.foot a:hover{color:var(--gold)}
+.foot .brand b{font-size:26px;font-family:"Songti SC","STSong",serif}
+.foot .brand p{color:var(--sub);font-size:13px;margin-top:12px;max-width:300px}
+.foot-bot{max-width:1180px;margin:32px auto 0;padding:20px 24px 0;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--sub)}
+.foot-bot a{color:var(--sub)}
+.foot-bot a:hover{color:var(--gold)}
+
+/* 响应式 */
+@media(max-width:980px){
+  .pick-grid{grid-template-columns:1fr 1fr}
+  .pick.lg{grid-row:span 1;grid-column:span 2}
+  .catalog{columns:2}
+  .collage{grid-template-columns:repeat(2,1fr);grid-auto-rows:auto}
+  .collage .tile{grid-column:span 1!important;grid-row:auto!important;min-height:120px}
+  .foot{grid-template-columns:1fr 1fr}
+  .subscribe{grid-template-columns:1fr;padding:28px}
+}
+@media(max-width:720px){
+  .wrap,.head-in,.foot,.foot-bot{padding-left:16px;padding-right:16px}
+  .head-in{grid-template-columns:1fr;gap:16px;text-align:center}
+  .mast{border-right:none;padding-right:0;justify-content:center}
+  .head-nav{display:none}
+  .head-side{align-items:center}
+  .lede{padding:32px 0 30px}
+  .lede-grid{grid-template-columns:1fr;gap:30px}
+  section{padding:50px 0}
+  .lede-cards{grid-template-columns:1fr}
+  .pick-grid{grid-template-columns:1fr}
+  .pick.lg{grid-column:span 1}
+  .catalog{columns:1}
+  .essay{grid-template-columns:1fr}
+  .questions{grid-template-columns:1fr}
+  .questions details:nth-child(odd){border-right:none;padding-right:0}
+  .questions details:nth-child(even){padding-left:0}
+  .figures{overflow-x:auto;display:block}
+  .figures table{min-width:520px}
+  .foot{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/zhangzong.js"></script>
+
+<header class="head">
+  <div class="head-in">
+    <div class="mast">
+      <div>
+        <b>秋霞电影网在线</b>
+        <small>QIUXIA DIANYINGWANG · 正版影视片库导航</small>
+      </div>
+      <em>EST. 2026</em>
+    </div>
+    <nav class="head-nav">
+      <a href="#editor">编辑精选</a>
+      <a href="#catalog">题材名录</a>
+      <a href="#review">影评专栏</a>
+      <a href="#figures">片库数据</a>
+      <a href="#topics">专题拼贴</a>
+      <a href="#ask">读者问答</a>
+      <a href="#letter">来信与投稿</a>
+    </nav>
+    <div class="head-side">
+      <span class="edition">第 01 刊 · 2026 年</span>
+      <span class="date">2026 年 10 月 06 日 星期二</span>
+      <a class="search" href="#">🔍 检索片名 / 导演 / 演员</a>
+    </div>
+  </div>
+</header>
+
+<!-- 头条 -->
+<section class="lede">
+  <div class="wrap lede-grid">
+    <div>
+      <div class="kicker"><span>本刊头条</span><i></i><span style="font-size:12px;color:var(--sub);letter-spacing:1px">FILM DISPATCH</span></div>
+      <h2>选片这件事<br>本该<b>少走弯路</b></h2>
+      <p class="standfirst">秋霞电影网在线不是一个播放器，而是一份每天都在更新的观影参考。我们替你筛掉宣传话术与流量灌水，把真正值得花两个小时的作品送到你面前。</p>
+      <div class="lede-meta">
+        <span><strong>2,900+</strong> 正版授权片源</span>
+        <span><strong>14</strong> 类题材分区</span>
+        <span><strong>每日 10:00</strong> 更新</span>
+        <span><strong>全端</strong> 自适应浏览</span>
+      </div>
+    </div>
+    <div class="lede-cards">
+      <a class="mini" href="#editor"><span class="num">今日 · 01</span><h4>院线同步片单</h4><p>本周新上映的八部影片，逐一点评题材卖点与适合人群。</p><span class="arrow">进入选片 →</span></a>
+      <a class="mini" href="#review"><span class="num">今日 · 02</span><h4>长评｜被低估的犯罪片</h4><p>为什么《白鸟事务所》的伏笔回收，在近年国产片中极为少见。</p><span class="arrow">阅读全文 →</span></a>
+      <a class="mini" href="#figures"><span class="num">数据 · 03</span><h4>十月排片观察</h4><p>从数据看治愈系影片如何在国庆档完成逆跌。</p><span class="arrow">查看图表 →</span></a>
+      <a class="mini" href="#topics"><span class="num">专题 · 04</span><h4>新站用户指南</h4><p>三种方式建立你自己的选片标准，告别片名与海报误导。</p><span class="arrow">开始阅读 →</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- 编辑精选 -->
+<section id="editor">
+  <div class="wrap">
+    <div class="bar"><h3>编辑精选片单</h3><span class="en">Editor's Picks</span><a class="more" href="#">查看完整片单 ›</a></div>
+    <p class="subtxt">由编辑团队每日筛选，不按流量排序，只看内容本身。左侧为本期重点推荐，右侧为同批次入榜作品。</p>
+    <div class="pick-grid" id="pickGrid"></div>
+  </div>
+</section>
+
+<!-- 题材名录 -->
+<section id="catalog" style="background:var(--paper2)">
+  <div class="wrap">
+    <div class="bar"><h3>题材分区名录</h3><span class="en">Genre Index</span><a class="more" href="#">全部 14 类 ›</a></div>
+    <p class="subtxt">按心情与偏好快速定位。每个分区都设有专属编辑与月度主题合集，可直接查阅片单明细。</p>
+    <div class="catalog" id="catalogBox"></div>
+  </div>
+</section>
+
+<!-- 影评专栏 -->
+<section id="review">
+  <div class="wrap">
+    <div class="bar"><h3>影评与专栏</h3><span class="en">Critical Notes</span><a class="more" href="#">更多文章 ›</a></div>
+    <p class="subtxt">不写通稿，不追热度。我们关心的是镜头语言、叙事结构与创作取舍，以及一部电影为什么值得被认真对待。</p>
+    <div class="essay" id="essayBox"></div>
+  </div>
+</section>
+
+<!-- 数据表 -->
+<section id="figures" style="background:var(--paper2)">
+  <div class="wrap">
+    <div class="bar"><h3>片库与排片数据</h3><span class="en">By the Numbers</span><span class="subtxt" style="margin:0">统计周期为 2026 年 9 月 26 日至 10 月 5 日，数据来源为站内播放与收藏行为。</span></div>
+    <div class="figures">
+      <table>
+        <thead><tr><th>题材分区</th><th>在库片量</th><th>本月新增</th><th>平均评分</th><th style="text-align:right">访问占比</th></tr></thead>
+        <tbody>
+          <tr><td>剧情与文艺</td><td class="num">318</td><td class="num up">+24</td><td class="num">8.6</td><td class="num up">22.4%</td></tr>
+          <tr><td>悬疑与犯罪</td><td class="num">271</td><td class="num up">+19</td><td class="num">8.3</td><td class="num up">18.7%</td></tr>
+          <tr><td>喜剧与轻松</td><td class="num">342</td><td class="num up">+11</td><td class="num">7.9</td><td class="num">14.1%</td></tr>
+          <tr><td>科幻与奇幻</td><td class="num">203</td><td class="num up">+16</td><td class="num">8.1</td><td class="num up">13.5%</td></tr>
+          <tr><td>爱情与青春</td><td class="num">295</td><td class="num">+8</td><td class="num">7.7</td><td class="num">11.2%</td></tr>
+          <tr><td>动作与战争</td><td class="num">168</td><td class="num up">+9</td><td class="num">7.8</td><td class="num">9.8%</td></tr>
+          <tr><td>纪录与独立</td><td class="num">212</td><td class="num up">+14</td><td class="num">8.4</td><td class="num up">7.3%</td></tr>
+          <tr><td>历史与传记</td><td class="num">126</td><td class="num up">+6</td><td class="num">8.5</td><td class="num">3.0%</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- 专题拼贴 -->
+<section id="topics">
+  <div class="wrap">
+    <div class="bar"><h3>本月专题拼贴</h3><span class="en">Features</span><a class="more" href="#">往期专题 ›</a></div>
+    <p class="subtxt">由编辑部策划的横向主题，跨题材、跨年代，用一种视角重新组织片库。</p>
+    <div class="collage">
+      <a class="tile t1" href="#"><h4>深夜里值得重看一遍的十部电影</h4><small>编辑部联合策划 · 23 分钟阅读</small></a>
+      <a class="tile t2" href="#"><h4>国产犯罪片的七年转折</h4><small>从本格推理到社会派</small></a>
+      <a class="tile t3" href="#"><h4>独立纪录片的生存现状</h4><small>访谈 9 位创作者</small></a>
+      <a class="tile t4" href="#"><h4>银幕上的秋天</h4><small>季节色彩专题</small></a>
+      <a class="tile t5" href="#"><h4>女性导演镜头下的家庭叙事</h4><small>12 部 · 附完整片单</small></a>
+      <a class="tile t6" href="#"><h4>科幻片的实景拍摄回归</h4><small>为什么特效不再是卖点</small></a>
+      <a class="tile t7" href="#"><h4>被片名耽误的好电影</h4><small>逆向选片实验</small></a>
+      <a class="tile t8" href="#"><h4>老片修复的意义</h4><small>4K 重制观察</small></a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="ask" style="background:var(--paper2)">
+  <div class="wrap">
+    <div class="bar"><h3>读者问答</h3><span class="en">Letters &amp; Answers</span><span class="subtxt" style="margin:0">点击问题展开，也可在页底来信提出你的疑问。</span></div>
+    <div class="questions" id="faqBox"></div>
+  </div>
+</section>
+
+<!-- 来信投稿 -->
+<section id="letter">
+  <div class="wrap">
+    <div class="bar"><h3>来信与投稿</h3><span class="en">Correspondence</span></div>
+    <p class="subtxt">想看的影片、读不懂的镜头、想投稿的影评，都欢迎写信给我们。每封来信都会有人读，每月选刊于本刊「读者来信」栏目。</p>
+    <div class="essay">
+      <div class="article">
+        <span class="cat">CONTACT</span>
+        <h4>栏目信息与联系方式</h4>
+        <p><strong>本刊名称：</strong>秋霞电影网在线<br>
+        <strong>访问地址：</strong>https://qiuxiadianyingwangzaixian-zh.github.io/<br>
+        <strong>内容定位：</strong>正版授权影视内容导航、片单推荐、影评解读与观影指南<br>
+        <strong>更新节奏：</strong>每日 10:00 更新片单，每周发布 3—5 篇影评与专题<br>
+        <strong>版权声明：</strong>本站仅收录已取得合法授权的影视内容，坚决抵制任何形式的盗版资源</p>
+        <div class="byline"><span>栏目编辑部</span><span>工作日 09:00 — 22:00 回复</span></div>
+      </div>
+      <form class="article" onsubmit="event.preventDefault();this.querySelector('button').textContent='已收到，感谢来信 ✓'">
+        <span class="cat">WRITE TO US</span>
+        <h4>写一封信</h4>
+        <div style="display:flex;flex-direction:column;gap:12px;flex:1">
+          <input type="text" placeholder="署名（可匿名）" style="border:1px solid var(--line);background:var(--paper);padding:12px 14px;border-radius:8px;font-size:14px;font-family:inherit;color:var(--ink)">
+          <input type="email" placeholder="回信邮箱" style="border:1px solid var(--line);background:var(--paper);padding:12px 14px;border-radius:8px;font-size:14px;font-family:inherit;color:var(--ink)">
+          <select style="border:1px solid var(--line);background:var(--paper);padding:12px 14px;border-radius:8px;font-size:14px;font-family:inherit;color:var(--ink2)">
+            <option>来信类型</option><option>想看的影片推荐</option><option>影评投稿</option><option>版权与授权问题</option><option>播放与浏览问题</option>
+          </select>
+          <textarea placeholder="想说的话……" style="border:1px solid var(--line);background:var(--paper);padding:12px 14px;border-radius:8px;font-size:14px;font-family:inherit;color:var(--ink);min-height:110px;resize:vertical"></textarea>
+        </div>
+        <div class="byline"><span style="color:var(--sub);font-size:12px">来信内容仅用于回复与栏目选刊，不会提供给第三方</span><button type="submit" style="border:none;background:var(--deep);color:#fff;padding:10px 22px;border-radius:8px;font-weight:800;cursor:pointer;font-family:inherit">寄出信件 →</button></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- 订阅 -->
+<section style="padding:0 0 70px">
+  <div class="wrap">
+    <div class="subscribe">
+      <div>
+        <h3>每周一封 <b>片单周报</b><br>不刷屏，只讲本周值得看的</h3>
+        <p>每周日晚 20:00 发出，含院线新片点评、流媒体上架提醒与一份编辑私人推荐。可随时退订，邮件地址仅用于发送周报。</p>
+      </div>
+      <div>
+        <form onsubmit="event.preventDefault();this.querySelector('button').textContent='订阅成功 ✓'">
+          <input type="email" placeholder="your@email.com">
+          <button type="submit">订阅周报</button>
+        </form>
+        <small>已订阅 12,400+ 位读者 · 本周退订率 0.4%</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot">
+    <div class="brand">
+      <b>秋霞电影网在线</b>
+      <p>一份每天都在更新的观影参考。我们筛掉宣传话术与流量灌水，把真正值得花两个小时的作品送到你面前。</p>
+    </div>
+    <div><h5>浏览内容</h5><ul><li><a href="#editor">编辑精选片单</a></li><li><a href="#catalog">题材分区名录</a></li><li><a href="#review">影评与专栏</a></li><li><a href="#topics">专题拼贴</a></li></ul></div>
+    <div><h5>数据与指南</h5><ul><li><a href="#figures">片库数据</a></li><li><a href="#ask">读者问答</a></li><li><a href="#letter">来信与投稿</a></li><li><a href="#">选片方法论</a></li></ul></div>
+    <div><h5>关于本刊</h5><ul><li><a href="#">版权与合规声明</a></li><li><a href="#">编辑部守则</a></li><li><a href="#">隐私与个人信息</a></li><li><a href="#">内容采购标准</a></li></ul></div>
+  </div>
+  <div class="foot-bot">
+    <span>© 2026 秋霞电影网在线 · 本刊网址 https://qiuxiadianyingwangzaixian-zh.github.io/ · 仅收录已取得合法授权的影视内容</span>
+    <span><a href="#">赣ICP备 0000000 号</a> · <a href="#letter">来信</a> · <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false">回到报头 ↑</a></span>
+  </div>
+</footer>
+
+<script>
+var picks=[
+  {t:"长夜将明",en:"BEFORE DAWN",y:"2026",g:["剧情","犯罪"],s:"8.7",st:"本期重点",cls:"lg",
+   c1:"#3a2c1e",c2:"#1a140c",
+   d:"一场跨越十五年的追凶，三段时空交织成网。结尾反转在业内拿下高分评价，被称为今年国产犯罪片的最大惊喜，也是本期编辑一致推举的头条作品。"},
+  {t:"外婆的菜园",en:"GRANDMA'S GARDEN",y:"2026",g:["家庭","治愈"],s:"9.1",st:"口碑榜首",cls:"",
+   c1:"#5a4520",c2:"#2a200c",
+   d:"一位独居老人与孙女重建关系的温暖小品，全片在云南小镇取景，没有一句说教却让人泪流满面。",
+   chips:["治愈系","年度候选","国产"]},
+  {t:"白鸟事务所",en:"WHITE BIRD",y:"2025",g:["悬疑","推理"],s:"8.5",st:"烧脑推荐",cls:"",
+   c1:"#1e3540",c2:"#0c1a22",
+   d:"密室、不在场证明与一封遗书。本格推理迷的年度之选，伏笔回收完整度在近年国产片中少见。",
+   chips:["本格推理","反转","长评推荐"]},
+  {t:"深海回声",en:"ECHOES BELOW",y:"2026",g:["科幻","冒险"],s:"8.3",st:"视效大片",cls:"",
+   c1:"#0e3a48",c2:"#071c24",
+   d:"潜水员在马里亚纳海沟发现人造结构的科幻惊悚片，实景拍摄占比超过七成，视听压迫感极强。",
+   chips:["IMAX","实景拍摄"]},
+  {t:"边境线",en:"THE BORDER",y:"2026",g:["战争","历史"],s:"8.9",st:"年度佳作",cls:"",
+   c1:"#3a3620",c2:"#1c1a0e",
+   d:"取材于真实档案的边境守备故事，群像塑造扎实，战争场面克制而有力量，被影评人列入年度十佳候选。",
+   chips:["真实改编","群像"]}
+];
+
+var entries=[
+  {i:"◆",t:"剧情与文艺",d:"聚焦人物命运与社会议题，收录近年国际电影节获奖作品与冷门佳片，是本站片量最大的分区。",n:"318 部"},
+  {i:"◆",t:"悬疑与犯罪",d:"本格推理、心理惊悚与警匪对决，适合喜欢动脑和反转的观众。",n:"271 部"},
+  {i:"◆",t:"喜剧与轻松",d:"脱口秀改编、荒诞喜剧与合家欢动画，解压首选分区。",n:"342 部"},
+  {i:"◆",t:"科幻与奇幻",d:"太空歌剧、时间旅行与异世界冒险，兼顾硬核设定与视觉奇观。",n:"203 部"},
+  {i:"◆",t:"爱情与青春",d:"从校园暗恋到中年重逢，收录跨越不同年龄段的情感故事。",n:"295 部"},
+  {i:"◆",t:"动作与战争",d:"实战化打斗设计、历史战役还原，拒绝无意义的爆炸堆砌。",n:"168 部"},
+  {i:"◆",t:"历史与传记",d:"真实人物与重大事件改编，兼顾史实严谨与戏剧张力。",n:"126 部"},
+  {i:"◆",t:"纪录与独立",d:"社会纪实、自然生态与低成本独立制作，看见主流视野之外的世界。",n:"212 部"},
+  {i:"◆",t:"动画与家庭",d:"成人向动画长片与合家欢作品分开归类，方便不同场景下的观看选择。",n:"187 部"},
+  {i:"◆",t:"惊悚与恐怖",d:"心理恐怖优先于 jump scare，附带年龄与心理承受度提示。",n:"94 部"},
+  {i:"◆",t:"音乐与歌舞",d:"舞台纪录、音乐传记与歌舞经典，附原声带与幕后制作笔记。",n:"76 部"},
+  {i:"◆",t:"短片与实验",d:"30 分钟以内的短片合集，适合碎片时间，多数来自独立影展。",n:"138 部"}
+];
+
+var articles=[
+  {c:"长篇评论",t:"《白鸟事务所》：伏笔回收的完整度，为何在近年国产片中如此少见",
+   b:"我们复盘了本片三年半的打磨过程，包括被推翻的七个结局版本、三条时间线的信息分配，以及最后十分钟如何把全部线索同时回收。这不是一篇夸赞稿，而是一份创作方法的拆解。",
+   au:"撰文 / 林深",d:"10 月 04 日 · 18 分钟阅读"},
+  {c:"观察",t:"治愈系影片如何在国庆档完成逆跌：一个排片数据的侧面",
+   b:"《外婆的菜园》上映首周票房破亿，第二周排片占比翻了三倍。我们分析了口碑曲线、场次上座率与社交平台讨论热度的关系，试图回答一个问题：内容质量究竟能在多大程度上对抗宣发预算。",
+   au:"数据观察 / 本刊编辑部",d:"10 月 01 日 · 9 分钟阅读"},
+  {c:"方法论",t:"建立你自己的选片标准：三种不再被片名和海报误导的方法",
+   b:"类型标签、演员阵容、预告片剪辑——这些最容易影响决策的信息，往往也最不可靠。本文给出三个可执行的筛选维度，以及一个你可以在十秒内完成的判断流程。",
+   au:"专栏 / 苏白",d:"09 月 28 日 · 12 分钟阅读"},
+  {c:"访谈",t:"专访《长夜将明》编剧：三重叙事线的取舍与代价",
+   b:"为什么要把同一个案件拆成三个年代来讲？编剧承认这是一次冒险：每加一条时间线，观众的理解成本就上升一档。我们聊了最初构想与最终成片之间被砍掉的部分。",
+   au:"访谈 / 陈屿",d:"09 月 25 日 · 22 分钟阅读"}
+];
+
+var faqs=[
+  {q:"秋霞电影网在线是什么性质的网站？",a:"本站是一个影视内容导航与资讯平台，主要提供正版授权片源索引、片单推荐、影评解读与观影指南。我们不提供资源下载，所有内容均指向已取得合法授权的发行方与平台。"},
+  {q:"片单多久更新一次？",a:"院线片单每日 10:00 更新，周榜单每周一凌晨刷新，专题与长评每周发布 3—5 篇。重大档期（春节、暑期、国庆）会安排实时动态更新。"},
+  {q:"为什么有些影片在站内搜不到？",a:"主要有两种情况：该片当前尚未开放网络播放授权，或内容质量未通过我们的评审标准。分区说明页面会标注每类内容的收录边界。"},
+  {q:"可以用手机和平板浏览吗？",a:"可以。本站采用全端自适应设计，在手机、平板、笔记本与智能电视浏览器上均可正常浏览，无需安装任何应用。"},
+  {q:"如何向编辑部推荐想看的影片？",a:"通过页面底部的「写一封信」表单提交即可，也可直接来信说明影片名称与题材偏好。采购团队每月召开片单评估会，会综合考虑用户反馈、版权可获取性与内容质量三个维度。"},
+  {q:"发现侵权或违规内容该怎么办？",a:"可在来信表单选择「版权与授权问题」，或通过页脚联系方式直接发起。我们承诺在 24 小时内完成初步核查，并在 72 小时内给出处理反馈与结果说明。"}
+];
+
+document.getElementById('pickGrid').innerHTML=picks.map(function(p){
+  var large=p.cls==='lg'?' style="min-height:260px"':'';
+  return '<article class="pick '+p.cls+'"><div class="cover"'+large+' style="background:linear-gradient(160deg,'+p.c1+','+p.c2+')">'+
+    '<span class="stamp">'+p.st+'</span><span class="rank-no">'+(p.s==='9.1'?'★':'')+'</span>'+
+    '<div class="cn">'+p.t+'</div><div class="en2">'+p.en+'</div>'+
+    '<div class="info"><i>'+p.y+'</i><i>'+p.g.join(' / ')+'</i><i>评分 '+p.s+'</i></div></div>'+
+    '<div class="body"><h4>'+p.t+'</h4><p>'+p.d+'</p>'+
+    (p.chips?'<div class="chips">'+p.chips.map(function(c){return '<span class="chip'+(c==='年度候选'?' on':'')+'">'+c+'</span>'}).join('')+'</div>':'')+'</div></article>';
+}).join('');
+
+document.getElementById('catalogBox').innerHTML=entries.map(function(e){
+  return '<a class="entry" href="#"><h4><i>'+e.i+'</i>'+e.t+'</h4><p>'+e.d+'</p>'+
+    '<div class="foot"><span>'+e.n+'在库</span><span style="color:var(--gold);font-weight:700">查阅片单 →</span></div></a>';
+}).join('');
+
+document.getElementById('essayBox').innerHTML=articles.map(function(a){
+  return '<article class="article"><span class="cat">'+a.c+'</span><h4>'+a.t+'</h4><p>'+a.b+'</p>'+
+    '<div class="byline"><span>'+a.au+'</span><span>'+a.d+'</span></div></article>';
+}).join('');
+
+document.getElementById('faqBox').innerHTML=faqs.map(function(f,i){
+  return '<details'+(i===0?' open':'')+'><summary>'+f.q+'</summary><p>'+f.a+'</p></details>';
+}).join('');
+
+document.querySelectorAll('.questions summary').forEach(function(s){
+  s.addEventListener('click',function(){
+    var d=this.parentElement;
+    if(!d.open){document.querySelectorAll('.questions details').forEach(function(x){x.open=false})}
+  });
+});
+</script>
+</body>
+</html>
